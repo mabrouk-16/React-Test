@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+    height: 100vh;
+    transition: all .5s;
+}
+
+/* ------------------ login wrapper --------------------*/
+.login-wrapper {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    background-position: center;
+}
+
+.welcome {
+    width: 65%;
+    padding-left: 50px;
+}
+
+.welcome>h1 {
+    font-size: 85px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    width: 66%;
+    font-size: 25px;
+    color: rgb(151, 151, 151);
+}
+
+.welcome a {
+    display: inline-block;
+    margin-top: 15px;
+    font-style: italic;
+    text-decoration: none;
+    border: 1px solid gray;
+    border-radius: 25px;
+    font-size: 25px;
+    padding: 10px 15px;
+    color: rgb(151, 151, 151);
+}
+
+/*  */
+.loginForm {
+    width: 25%;
+    margin: 15px auto;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.loginForm>h1 {
+    text-align: center;
+}
+
+.loginForm .control {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+.loginForm input {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 10px;
+    background: transparent;
+}
+
+.loginForm input#logBtn {
+    color: white;
+}
+
+.loginForm input#logBtn:hover,
+.welcome a:hover {
+    background: linear-gradient(180deg, rgb(0, 145, 145, 0.5),
+            rgb(0, 177, 177));
+    ;
+    cursor: pointer;
+}

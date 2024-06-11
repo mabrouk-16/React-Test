@@ -1,0 +1,57 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(52, 72, 64, 0.378);
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editForm {
+    background-color: #242424;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 20px;
+    z-index: 111;
+}
+
+.input_controller {
+    margin: 20px 0;
+}
+
+.input_controller label {
+    color: var(--main-color);
+    margin: 10px;
+    text-align: center;
+}
+
+.input_controller input,
+.input_controller textarea {
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.editForm .submit {
+    display: inline-block;
+    background-color: rgb(2, 114, 225);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.editForm .cancel {
+    display: inline-block;
+    background-color: rgb(206, 43, 10);
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 50px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
