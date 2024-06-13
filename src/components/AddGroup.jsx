@@ -12,11 +12,15 @@ function AddGroup({ sendGroup }) {
       nameRef.current.value.trim() !== "" &&
       discRef.current.value.trim() !== ""
     ) {
+      const now = new Date();
       const newGroup = {
+        id: now.getTime(),
         name: nameRef.current.value,
         discreption: discRef.current.value,
+        createdAt: `${now.getDate()}/${now.getMonth()}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`,
       };
       setError("");
+      console.log(newGroup)
       sendGroup(newGroup);
     } else setError(" -- complete all inputs");
   };

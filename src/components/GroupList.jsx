@@ -1,12 +1,12 @@
 import "./GroupList.css";
 
 function GroupList({ groupList, onUpdateGroupHandler, onSelectItem }) {
-  const deleteItem = (i) => {
-    groupList.splice(i, 1);
-    onUpdateGroupHandler(groupList, i);
+  const deleteItem = (id) => {
+    groupList = groupList.filter((item) => item.id !== id);
+    onUpdateGroupHandler(groupList);
   };
-  const editItem = (index) => {
-    onSelectItem(index, true);
+  const editItem = (id) => {
+    onSelectItem(id, true);
   };
 
   return (
@@ -19,24 +19,29 @@ function GroupList({ groupList, onUpdateGroupHandler, onSelectItem }) {
               <td>#</td>
               <td>Name</td>
               <td>discreption</td>
+              <td>Created At</td>
               <td>controls</td>
             </tr>
           </thead>
           <tbody>
             {groupList.map((list, index) => {
               return (
-                <tr key={index}>
+                <tr key={list.id}>
                   <td>{index + 1}</td>
                   <td>{list.name}</td>
                   <td>{list.discreption}</td>
+                  <td>{list.createdAt}</td>
                   <td>
-                    <button className="update-button" onClick={() => editItem(index)}>
+                    <button
+                      className="update-button"
+                      onClick={() => editItem(list.id)}
+                    >
                       edit
                     </button>
                     <button
                       className="del-button"
                       onClick={() => {
-                        deleteItem(index);
+                        deleteItem(list.id);
                       }}
                     >
                       delete

@@ -8,7 +8,6 @@ function GroupContainter() {
   const [groupList, setGroupList] = useState([]);
   const [showEditForm, setShowEditForm] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const addGroup = (newGroup) => {
     setGroupList((prev) => [...prev, newGroup]);
@@ -16,14 +15,19 @@ function GroupContainter() {
   const updateGroup = (newGroup) => {
     setGroupList([...newGroup]);
   };
-  const itemSelectedHandler = (index, show) => {
+  const itemSelectedHandler = (id, show) => {
     setShowEditForm(show);
-    setSelectedItem(groupList[index]);
-    setSelectedIndex(index); 
+    setSelectedItem(groupList.find((item) => item.id == id));
   };
   const editGroup = (group) => {
-    groupList[selectedIndex] = group;
-    setGroupList([...groupList]);
+
+    for (let i = 0; i < groupList.length; i++) {
+      if (groupList[i].id == group.id) {
+        groupList[i] = { ...group };
+        return;
+      }
+    }
+    updateGroup(groupList);
   };
   return (
     <>
